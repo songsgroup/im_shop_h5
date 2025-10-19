@@ -1,11 +1,11 @@
 <template>
 	<view class="page_container">
-		
+
 		<view class="logo-wrap">
 			<view class="hello-wrap">
 				<view class="left-info">
 					<view class="title" v-if="isRegister">{{$i18n.t('新用户注册')}}</view>
-				
+
 				</view>
 				<img style="border-radius: 24rpx;" src="static/images/new_ui/logo.png" alt="" />
 			</view>
@@ -129,7 +129,9 @@
 	import {
 		checkLoginError
 	} from "@/util/common";
-
+	import {
+		config
+	} from '@/api/domain.js'
 	let timer;
 
 	export default {
@@ -313,7 +315,7 @@
 				};
 				console.log("data", data)
 				try {
-					let loginUrl = uni.getStorageSync("ShopApi") + "/gw?store_id=1&store_type=2";
+					let loginUrl = config.ShopApi + "/gw?store_id=1&store_type=2";
 					console.log(data, loginUrl)
 					var resData = await uni.$u?.http.post(loginUrl, JSON.stringify(data));
 					console.info("注册结果", resData);
