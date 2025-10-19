@@ -1,10 +1,12 @@
 // import config from "@/common/config";
 
-
+import {
+	config
+} from "./domain.js";
 
 //基于request的封装
 function get(url, params) {
-	const baseURL = uni.getStorageSync("IMRegisteUrl");
+	const baseURL = config.ShopApi;
 	return new Promise((resolve, reject) => {
 
 		uni.request({
@@ -30,8 +32,7 @@ function get(url, params) {
 }
 
 function post(url, params) {
-	const baseURL = uni.getStorageSync("IMRegisteUrl");
-	console.log('222',333)
+	const baseURL = config.ShopApi;
 	return new Promise((resolve, reject) => {
 		uni.request({
 			url: baseURL + url, // 拼接基础URL和具体路径

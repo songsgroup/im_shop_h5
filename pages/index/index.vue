@@ -1,11 +1,11 @@
 <template>
 	<view class="page_container">
-
+		
 		<view class="logo-wrap">
 			<view class="hello-wrap">
 				<view class="left-info">
 					<view class="title" v-if="isRegister">{{$i18n.t('新用户注册')}}</view>
-					<view class="title" v-else>{{$i18n.t('忘记密码')}}</view>
+				
 				</view>
 				<img style="border-radius: 24rpx;" src="static/images/new_ui/logo.png" alt="" />
 			</view>
@@ -90,11 +90,27 @@
 				<image src="@/static/images/new_ui/xy_no.png" v-if="!agreementRadio"
 					@click="agreementRadio=!agreementRadio"></image>
 				<view style="margin-left: 20rpx;display: flex;" @click="handleAgreement">
-					<view style="color:#8C8C8C;font-size:28rpx;">阅读并钩选(同意)</view>
-					<view style="color:#FE3344;font-size:28rpx;">《用户协议》</view>
+					<view style="color:#8C8C8C;font-size:28rpx;"> {{ $i18n.t('阅读并钩选(同意)')  }}</view>
+					<view style="color:#FE3344;font-size:28rpx;">《{{ $i18n.t('用户协议') }}》 </view>
 				</view>
 			</view>
 			<AreaPicker ref="AreaPicker" @chooseArea="chooseArea" />
+
+
+			<view class="" style="display: flex; justify-content: center;">
+				<view class="" style="display: flex;align-items: center;margin-top: 20rpx;">
+					<span style="color:#8C8C8C;">
+						{{ $i18n.t('已有账号') }}？
+
+					</span>
+					<view class="" @click="jump('/pages/index/app')">
+
+						{{ $i18n.t('去下载') }}
+					</view>
+
+				</view>
+			</view>
+
 		</view>
 	</view>
 </template>
@@ -127,12 +143,12 @@
 				showCountry: false,
 				count: 0,
 				userInfo: {
-					phoneNumber: "18140208525",
+					phoneNumber: "",
 					email: "",
 					areaCode: "86",
 					invitationCode: "",
-					password: "000000",
-					confirmPassword: "000000",
+					password: "",
+					confirmPassword: "",
 					codeValue: "",
 					nationalFlag: "/static/flag/cn.png",
 					short: "CN"
@@ -199,6 +215,11 @@
 			}
 		},
 		methods: {
+			jump(url) {
+				uni.navigateTo({
+					url: url
+				})
+			},
 			back() {
 				uni.$u.route("/pages/login/index");
 			},
@@ -299,7 +320,7 @@
 					if (resData.code == 200) {
 						this.saveLoginInfo();
 						uni.$u.toast(`${this.$i18n.t('注册成功')}`)
-						uni.$u.route("/pages/login/index")
+						uni.$u.route("/pages/index/app")
 					}
 					this.loading = false;
 				} catch (err) {
@@ -327,7 +348,7 @@
 			handleAgreement() {
 				this.agreementRadio = true;
 				uni.navigateTo({
-					url: "/pages/login/register/agreement",
+					url: "/pages/index/agreement",
 				});
 			}
 		},
