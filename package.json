@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "md5": "^2.3.0"
+  },
+  "devDependencies": {
+    "sass": "^1.93.2",
+    "sass-loader": "^16.0.5"
+  }
+}
