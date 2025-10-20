@@ -323,6 +323,8 @@
 						this.saveLoginInfo();
 						uni.$u.toast(`${this.$i18n.t('注册成功')}`)
 						uni.$u.route("/pages/index/app")
+					}else{
+						uni.$u.toast(this.$i18n.t(resData.data.errMsg))
 					}
 					this.loading = false;
 				} catch (err) {
