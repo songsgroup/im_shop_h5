@@ -319,10 +319,12 @@
 					console.log(data, loginUrl)
 					var resData = await uni.$u?.http.post(loginUrl, JSON.stringify(data));
 					console.info("注册结果", resData);
-					if (resData.code == 200) {
-						this.saveLoginInfo();
+					if (resData.data.code == 200) {
+						// this.saveLoginInfo();
 						uni.$u.toast(`${this.$i18n.t('注册成功')}`)
-						uni.$u.route("/pages/index/app")
+						setTimeout(()=>{
+							uni.$u.route("/pages/index/app")
+						},2000)
 					}else{
 						uni.$u.toast(this.$i18n.t(resData.data.errMsg))
 					}
