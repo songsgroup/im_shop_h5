@@ -60,7 +60,7 @@
             <span class="section-title">Follow us</span>
             <view class="social-icons">
                 <image class="social-icon" src="/static/landing/tiktok.svg" />
-                <image class="social-icon" src="/static/landing/fb1.svg" />
+                <image class="social-icon" src="/static/landing/FB.svg" />
                 <image class="social-icon" src="/static/landing/twitter.svg" />
             </view>
         </view>
