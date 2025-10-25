@@ -103,7 +103,7 @@
 						{{ $i18n.t('已有账号') }}？
 
 					</span>
-					<view class="" @click="jump('/pages/index/app')">
+					<view class="" @click="jump('/pages/index/appDownload')">
 
 						{{ $i18n.t('去下载') }}
 					</view>
@@ -323,7 +323,7 @@
 						// this.saveLoginInfo();
 						uni.$u.toast(`${this.$i18n.t('注册成功')}`)
 						setTimeout(()=>{
-							uni.$u.route("/pages/index/app")
+							uni.$u.route("/pages/index/appDownload")
 						},2000)
 					}else{
 						uni.$u.toast(this.$i18n.t(resData.data.errMsg))
@@ -464,7 +464,7 @@
 		}
 	}
 
-	/deep/ .u-code-input__item {
+	::v-deep .u-code-input__item {
 		background-color: #F6F6F6;
 		border-radius: 16rpx;
 		margin-right: 13rpx;
