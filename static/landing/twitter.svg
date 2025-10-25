@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>twitter</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="落地页" transform="translate(-104, -417)" fill-rule="nonzero">
+            <g id="twitter" transform="translate(104, 417)">
+                <circle id="椭圆形" fill="#000000" cx="16" cy="16" r="16"></circle>
+                <path d="M8.0432,8 L14.8384,17.0768 L8,24.4576 L9.5392,24.4576 L15.5264,17.9952 L20.3632,24.4576 L25.6,24.4576 L18.4224,14.8688 L24.7872,8 L23.248,8 L17.7344,13.9504 L13.28,8 L8.0432,8 Z M10.3072,9.1328 L12.7136,9.1328 L23.3376,23.3248 L20.9312,23.3248 L10.3072,9.1328 Z" id="形状" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -18,6 +18,13 @@
 			}
 		},
 		{
+			"path" : "pages/index/appDownload",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
 			"path" : "pages/index/agreement",
 			"style" : 
 			{
