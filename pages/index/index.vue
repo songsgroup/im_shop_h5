@@ -217,6 +217,7 @@
 			}
 		},
 		methods: {
+
 			jump(url) {
 				uni.navigateTo({
 					url: url
@@ -274,10 +275,29 @@
 					usedFor: 1,
 					operationID: Date.now() + "",
 				};
-				businessSendSms(options)
-					.then(() => {
-						uni.$u.toast(`${this.$i18n.t('验证码已发送！')}`);
-						this.startCount();
+
+				const newOptions = {
+					module: 'app',
+					action: 'user',
+					app: 'secret_key',
+					message_type: 0,
+					message_type1: 2,
+					phone: this.userInfo.areaCode+'-' + this.userInfo.phoneNumber,
+					language: 'en'
+				}
+				// config.ShopApi + 
+				let url = "/gw?store_id=1&store_type=2";
+
+				uni.$u?.http.post(url, JSON.stringify(newOptions))
+					.then(res => {
+						console.log('res',res)
+						if (res && res.data.code == 200 || res.data.code=='200') {
+							uni.$u.toast(`${this.$i18n.t('验证码已发送！')}`);
+							this.startCount();
+						} else {
+							uni.$u.toast(res.message || '发送失败');
+						}
+
 					})
 					.catch((err) => {
 						console.error(err);
@@ -315,18 +335,19 @@
 				};
 				console.log("data", data)
 				try {
-					let loginUrl = config.ShopApi + "/gw?store_id=1&store_type=2";
-					console.log(data, loginUrl)
+					// config.ShopApi + 
+					let loginUrl = "/gw?store_id=1&store_type=2";
+
 					var resData = await uni.$u?.http.post(loginUrl, JSON.stringify(data));
 					console.info("注册结果", resData);
 					if (resData.data.code == 200) {
 						// this.saveLoginInfo();
 						uni.$u.toast(`${this.$i18n.t('注册成功')}`)
-						setTimeout(()=>{
+						setTimeout(() => {
 							uni.$u.route("/pages/index/appDownload")
-						},2000)
-					}else{
-						uni.$u.toast(this.$i18n.t(resData.data.errMsg))
+						}, 2000)
+					} else {
+						uni.$u.toast(this.$i18n.t(resData.data.message))
 					}
 					this.loading = false;
 				} catch (err) {

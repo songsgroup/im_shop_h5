@@ -1,0 +1,33 @@
+/* Custom Font Face Declarations for Global Use */
+@font-face {
+    font-family: 'MyFont';
+    src: url('/static/fonts/RobotoCondensed-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MyFont';
+    src: url('/static/fonts/RobotoCondensed-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Global font utility classes */
+.font-myfont {
+    font-family: 'MyFont', sans-serif;
+}
+
+.font-myfont-bold {
+    font-family: 'MyFont', sans-serif;
+    font-weight: bold;
+}
+
+.font-myfont-regular {
+    font-family: 'MyFont', sans-serif;
+    font-weight: normal;
+}
+
+

@@ -34,6 +34,7 @@ function get(url, params) {
 function post(url, params) {
 	const baseURL = config.ShopApi;
 	return new Promise((resolve, reject) => {
+		console.log('baseURL + url,',baseURL + url,)
 		uni.request({
 			url: baseURL + url, // 拼接基础URL和具体路径
 			method: 'POST',
