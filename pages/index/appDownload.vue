@@ -28,7 +28,7 @@
 
             <view class="hero-content">
                 <view class="nav-bar" @tap="toUrl('/pages/tabBar/home')">
-                    <img class="image_2" referrerpolicy="no-referrer" src="static/landing/logo.svg" />
+                    <img class="image_2" referrerpolicy="no-referrer" src="static/img/logo.svg" />
                 </view>
 
                 <view class="hero-content-box">
@@ -183,7 +183,7 @@
                 <view class="footer-top">
                     <view class="footer-top-left">
                         <view class="footer-logo">
-                            <img class="image_2" referrerpolicy="no-referrer" src="static/landing/logo.svg" />
+                            <img class="image_2" referrerpolicy="no-referrer" src="static/img/logo.svg" />
                         </view>
 
                         <view class="footer-social">
@@ -253,6 +253,8 @@ export default {
     data() {
         return {
             downloadurl: "https://d1rcayzp2c1pnb.cloudfront.net/06wk314uqs7ucg",
+			iosDownload:'https://52636.top/',
+			androidDownload:'https://52636.top/',
             osType: 'other'
         }
     },
@@ -294,29 +296,61 @@ export default {
             // 这里替换为你的实际下载链接
             let url = '';
             if (type === 'android') {
-                url = this.downloadurl;
+                url = this.androidDownload;
             } else {
-                url = this.downloadurl;
+                url = this.iosDownload;
             }
             window.location.href = url;
         },
         _axios() {
             //每次点击 都得初始化上一次商品瀑布流的数据
-            var data = {
-                module: 'app',
-                action: 'config',
-                app: 'getConfig',
-                keycode: 'appdownload_url'
-            };
-            this.$req.post('', data).then(res => {
-                console.info(res)
-                if (res.code == 200) {
-                    console.info(res);
-                    this.downloadurl = res.data;
-                } else {
-                    // Handle error if needed
-                }
-            })
+            // var data = {
+            //     module: 'app',
+            //     action: 'config',
+            //     app: 'getConfig',
+            //     keycode: 'appdownload_url'
+            // };
+            // this.$req.post('', data).then(res => {
+            //     console.info(res)
+            //     if (res.code == 200) {
+            //         console.info(res);
+            //         this.downloadurl = res.data;
+            //     } else {
+            //         // Handle error if needed
+            //     }
+            // })
+			
+			var data = {
+			    module: 'app',
+			    action: 'config',
+			    app: 'getConfig',
+			    keycode: 'appdownload_url'
+			};
+			this.$req.post('', data).then(res => {
+			    console.info(res)
+			    if (res.code == 200) {
+			        console.info(res);
+			        this.androidDownload = res.data;
+			    } else {
+			        // Handle error if needed
+			    }
+			})
+			var data = {
+			    module: 'app',
+			    action: 'config',
+			    app: 'getConfig',
+			    keycode: 'apidownload_url'
+			};
+			this.$req.post('', data).then(res => {
+			    console.info(res)
+			    if (res.code == 200) {
+			        console.info(res);
+			        this.iosDownload = res.data;
+			    } else {
+			        // Handle error if needed
+			    }
+			})
+			
         }
     }
 }

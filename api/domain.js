@@ -3,7 +3,7 @@ let config = {
 	baseURL: '',
 	IMRegisteUrl: '',
 	SeApi: '',
-	ShopApi: 'http://47.111.189.7:8800',
+	ShopApi: 'https://ishop.iiae.cn',
 	VersionApi: ''
 }
 
