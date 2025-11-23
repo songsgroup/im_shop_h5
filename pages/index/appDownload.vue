@@ -28,7 +28,7 @@
 
             <view class="hero-content">
                 <view class="nav-bar" @tap="toUrl('/pages/tabBar/home')">
-                    <img class="image_2" referrerpolicy="no-referrer" src="static/img/logo.svg" />
+                    <img class="image_2" referrerpolicy="no-referrer" src="static/img/logo@3x.svg" />
                 </view>
 
                 <view class="hero-content-box">
@@ -46,7 +46,7 @@
                         </view>
                     </view>
                     <view class="hero-content-box-right">
-                        <image class="phone-image" src="/static/landing/phone.png" />
+                        <image class="phone-image" src="/static/landing/phone1.png" />
                     </view>
                 </view>
 
@@ -183,7 +183,7 @@
                 <view class="footer-top">
                     <view class="footer-top-left">
                         <view class="footer-logo">
-                            <img class="image_2" referrerpolicy="no-referrer" src="static/img/logo.svg" />
+                            <img class="image_2" referrerpolicy="no-referrer" src="static/img/logo@3x.svg" />
                         </view>
 
                         <view class="footer-social">
