@@ -2,7 +2,7 @@
 // console.log("baseURL", baseURL);
 
 // if(!baseURL){ //如果没有基础地址，就设置基础地址等信息
-	baseURL = 'https://s.mytomato.vip/index.json';
+	baseURL = 'http://47.111.189.7:8801/index.json';
 	uni.setStorageSync("CurrRoute", "默认线路");
 	uni.setStorageSync("HTTPUrl", baseURL);
 	
@@ -10,7 +10,7 @@
 	uni.setStorageSync("IMApiUrl", "http://121.41.231.226:10002");
 	uni.setStorageSync("IMWsUrl", "ws://121.41.231.226:10001");
 	uni.setStorageSync("SeApi", "http://47.111.189.7:8803");
-	uni.setStorageSync("ShopApi", "http://47.111.189.7:8800");
+	uni.setStorageSync("ShopApi", "/shopapi");
 	uni.setStorageSync("VersionApi", "http://47.111.189.7:8809/version.php");
 
 	// uni.setStorageSync("IMRegisteUrl", "http://118.31.239.140:10008");

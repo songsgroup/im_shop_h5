@@ -1,10 +1,11 @@
 {
-    "name" : "im_shop_register",
-    "appid" : "__UNI__AB93B0A",
-    "description" : "",
+    "name" : "GLBMall",
+    "appid" : "__UNI__B0C90E1",
+    "description" : "GLBMall",
     "versionName" : "1.0.0",
     "versionCode" : "100",
     "transformPx" : false,
+    "sassImplementationName" : "node-sass",
     /* 5+App特有相关 */
     "app-plus" : {
         "usingComponents" : true,
@@ -70,3 +71,5 @@
     },
     "vueVersion" : "2"
 }
+/* 5+App特有相关 */
+

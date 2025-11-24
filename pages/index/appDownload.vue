@@ -253,8 +253,8 @@ export default {
     data() {
         return {
             downloadurl: "https://d1rcayzp2c1pnb.cloudfront.net/06wk314uqs7ucg",
-			iosDownload:'https://52636.top/',
-			androidDownload:'https://52636.top/',
+			iosDownload:'https://www.pgyer.com/globeat-ios',
+			androidDownload:'http://47.111.189.7:8809/apk/165.apk',
             osType: 'other'
         }
     },
@@ -326,7 +326,7 @@ export default {
 			    app: 'getConfig',
 			    keycode: 'appdownload_url'
 			};
-			this.$req.post('', data).then(res => {
+			this.$req.post('/gw?store_id=1$store_type=2', data).then(res => {
 			    console.info(res)
 			    if (res.code == 200) {
 			        console.info(res);
@@ -341,7 +341,7 @@ export default {
 			    app: 'getConfig',
 			    keycode: 'apidownload_url'
 			};
-			this.$req.post('', data).then(res => {
+			this.$req.post('/gw?store_id=1$store_type=2', data).then(res => {
 			    console.info(res)
 			    if (res.code == 200) {
 			        console.info(res);
